@@ -3,19 +3,19 @@
 # Function to creiiate a new student record
 create_student() {
   # Prompt for details and store in variables
-  read -p "Enter Student ID: " student_id
+  read -p "Enter Student ID: " student0_id
   read -p "Enter Student Name: " student_name
   read -p "Enter Student Email: " student_email
   read -p "Enter Student Age: " student_age
   read -p "Enter Student Intake: " student_intake
 
   # Append data to students-list.txt
-  echo "$student_id,$student_name,$student_email,$student_age,$student_intake" >> students-list.txt
+  echo "$student_id,$student_name,$student_email,$student_age,$student_intake" >> students-list_1023.txt
 }
 
-# Function to list all student records
+# Function to list all student recordis
 list_students() {
-  cat students-list.txt
+  cat students-list_1023.txt
 }
 
 # Function to delete a student record by ID
@@ -24,8 +24,8 @@ delete_student() {
   read -p "Enter Student ID to Delete: " delete_id
 
   # Filter and save records excluding the deleted ID
-  grep -v "^$delete_id," students-list.txt > temp_list.txt
-  mv temp_list.txt students-list.txt
+  grep -v "^$delete_id," students-list_1023.txt > temp_list.txt
+  mv temp_list.txt students-list_1023.txt
 }
 
 # Function to update a student record by ID
@@ -51,7 +51,7 @@ update_student() {
   updated_line="${update_id},${new_name:-$(echo "$student_line" | cut -d ',' -f2)},${new_email:-$(echo "$student_line" | cut -d ',' -f3)},${new_age:-$(echo "$student_line" | cut -d ',' -f4)},${new_intake:-$(echo "$student_line" | cut -d ',' -f4)}"
 
   # Replace the record line in the file
-  sed -i "/^$update_id,/c $updated_line" students-list.txt
+  sed -i "/^$update_id,/c $updated_line" students-list_1023.txt
 }
 
 # Main menu loop
@@ -75,4 +75,4 @@ while true; do
 done
 
 # Script to extract student email addresses (optional)
-grep -P ',\w+@[\w\.]+\w+' students-list.txt > student-emails.txt
+grep -P ',\w+@[\w\.]+\w+' students-list_1023.txt > student-emails.txt
