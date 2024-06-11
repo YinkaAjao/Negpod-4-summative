@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# Function to create a new student record
+# Function to creiiate a new student record
 create_student() {
   # Prompt for details and store in variables
   read -p "Enter Student ID: " student_id
+  read -p "Enter Student Name: " student_name
   read -p "Enter Student Email: " student_email
   read -p "Enter Student Age: " student_age
+  read -p "Enter Student Intake: " student_intake
 
   # Append data to students-list.txt
-  echo "$student_id,$student_email,$student_age" >> students-list.txt
+  echo "$student_id,$student_name,$student_email,$student_age,$student_intake" >> students-list.txt
 }
 
 # Function to list all student records
@@ -40,11 +42,13 @@ update_student() {
   fi
 
   # Extract details and prompt for updates
+  read -p "Update Name:" new_name
   read -p "Update Email:" new_email
   read -p "Update Age:" new_age
+  read -p "update Intake:" new_intake
 
   # Update data in the record line
-  updated_line="${update_id},${new_email:-$(echo "$student_line" | cut -d ',' -f2)},${new_age:-$(echo "$student_line" | cut -d ',' -f3)}"
+  updated_line="${update_id},${new_name:-$(echo "$student_line" | cut -d ',' -f2)},${new_email:-$(echo "$student_line" | cut -d ',' -f3)},${new_age:-$(echo "$student_line" | cut -d ',' -f4)},${new_intake:-$(echo "$student_line" | cut -d ',' -f4)}"
 
   # Replace the record line in the file
   sed -i "/^$update_id,/c $updated_line" students-list.txt
