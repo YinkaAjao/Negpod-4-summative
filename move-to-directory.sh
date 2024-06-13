@@ -2,11 +2,9 @@
 
 # Function to move files to a directory
 move_to_directory() {
-  # Prompt for student ID
-  read -p "Enter Student ID (Negpod 4): " student_id
 
   # Construct directory name
-  student_record_dir="negpod_4-${student_id}-q1"  # Replace with desired naming convention
+  student_record_dir="negpod_4-q1"  # Replace with desired naming convention
 
   # Create directory if it doesn't exist
   mkdir -p "$student_record_dir" || {
@@ -16,10 +14,12 @@ move_to_directory() {
 
   # List of student record files (modify as needed)
   files_to_move=(
-    "Negpod id-gl"
-    "backup-Negpod_ID.sh"
-    "students-list.txt"
+    "Main.sh"
+    "select-emails.sh"
+    "students-list_1023.txt"
     "select-emails.txt"
+    "student_emails.txt"
+    "README.md"
   )
 
   # Move files with error handling
