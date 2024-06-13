@@ -41,7 +41,7 @@ move_to_directory() {
 # Main function for script execution
 main() {
   # Display a welcome message
-  touch "Welcome to the Student Record File Mover!"
+  echo  "Welcome to the Student Record File Mover!"
 
   # Call the move_to_directory function
   move_to_directory
