@@ -3,7 +3,7 @@
 # Function to creiiate a new student record
 create_student() {
   # Prompt for details and store in variables
-  read -p "Enter Student ID: " student0_id
+  read -p "Enter Student ID: " student_id
   read -p "Enter Student Name: " student_name
   read -p "Enter Student Email: " student_email
   read -p "Enter Student Age: " student_age
@@ -34,7 +34,7 @@ update_student() {
   read -p "Enter Student ID to Update: " update_id
 
   # Find the record line
-  student_line=$(grep "^$update_id," students-list.txt)
+  student_line=$(grep "^$update_id," students-list_1023.txt)
 
   if [[ -z "$student_line" ]]; then
     echo "Student ID not found!"
