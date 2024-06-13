@@ -54,9 +54,9 @@ main() {
 main
 
 # Optional: Add functionality for taking arguments (Negpod ID)
-if [[ $# -eq 1 ]]; then
-   student_id="$1"
-   move_to_directory "$student_id"
-else
-  echo "Usage: $0 <Negpod ID>"
-fi
+#if [[ $# -eq 1 ]]; then
+ #  student_id="$1"
+  # move_to_directory "$student_id"
+#else
+ # echo "Usage: $0 <Negpod ID>"
+#fi
