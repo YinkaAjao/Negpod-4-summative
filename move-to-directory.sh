@@ -15,9 +15,11 @@ move_to_directory() {
   # List of student record files (modify as needed)
   files_to_move=(
     "Main.sh"
-    "select-email.sh"
+    "select-emails.sh"
     "students-list_1023.txt"
     "select-emails.txt"
+    "student_emails.txt"
+    "README.md"
   )
 
   # Move files with error handling
