@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 4444,Janet Brown,Jb@gmail.com,22,may 2022
 5555,Amanda Gilbert,AG@gmail.com,23,jan 2021
 2342,David Ajao,d.ajao@alustudent.com,20,jan 2024
+=======
+2331,yinka,m.girnong@gmail.com,17,jan 2024
+5555,tunde,t.yup@gmail.com,12,sept 2023
+2222,yondo,h.him@gmail.com,13,may 2019
+>>>>>>> 1ba41d0b267410672ac30d7e33dfe1257ceea436
