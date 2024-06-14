@@ -23,9 +23,24 @@ delete_student() {
   # Prompt for ID to delete
   read -p "Enter Student ID to Delete: " delete_id
 
-  # Filter and save records excluding the deleted ID
-  grep -v "^$delete_id," students-list_1023.txt > temp_list.txt
-  mv temp_list.txt students-list_1023.txt
+    # Search for the record in the file
+    record=$(grep -i "$student_id" students-list_1023.txt)
+
+    # Check if a record was found
+    if [ -n "$record" ]; then
+        # Prompt the user to confirm the deletion
+        read -p "Are you sure you want to delete the record (y/n) " confirm
+
+        # Delete the record if the user confirms
+        if [ "$confirm" = "y" ]; then
+            grep -v "$student_id" students-list_1023.txt >temp_file.txt
+            mv temp_file.txt students-list_1023.txt
+        else
+            echo "Deletion cancelled."
+        fi
+    else
+        echo "No record found for '$student_id'."
+    fi
 }
 
 # Function to update a student record by ID
